@@ -1,3 +1,5 @@
+import { Container } from "./Container";
+
 export const Footer = () => {
-  return <>Footer</>;
+  return <Container>Footer</Container>;
 };

@@ -7,6 +7,9 @@ import { Home } from "./pages/main/Home";
 import { ShopMain } from "./pages/shop/ShopMain";
 import { NotFound } from "./components/NotFound";
 import { GlobalStyled } from "./styles/globalStyled";
+import { ShopBag } from "./pages/main/ShopBag";
+import { Login } from "./pages/main/Login";
+import { Event } from "./pages/community/Event";
 
 function App() {
   return (
@@ -16,8 +19,11 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/shopping_bag" element={<ShopBag />}></Route>
+          <Route path="/login" element={<Login />}></Route>
           <Route path="/shop" element={<ShopMain />}></Route>
-          <Route path="/community" element={<Notice />}></Route>
+          <Route path="/community_notice" element={<Notice />}></Route>
+          <Route path="/community_event" element={<Event />}></Route>
           <Route path="/*" element={<NotFound />}></Route>
         </Routes>
         <Footer />
