@@ -3,7 +3,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Notice } from "./pages/community/Notice";
-import { Home } from "./pages/main/Home";
+import { Home } from "./pages/main/home/Home";
 import { ShopMain } from "./pages/shop/ShopMain";
 import { NotFound } from "./components/NotFound";
 import { GlobalStyled } from "./styles/globalStyled";

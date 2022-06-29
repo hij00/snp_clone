@@ -9,15 +9,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { MainStyle } from "../styles/globalStyled";
-import { Container } from "./Container";
 
 const SHeader = styled.div`
   width: 100%;
-  padding: 30px 0;
+  padding: 25px 020px;
   position: fixed;
   top: 0;
-  transform: translateX(20px);
-  z-index: ;
+  left: 0;
+  z-index: 999;
 `;
 const Wrap = styled.div`
   width: 100%;
@@ -32,21 +31,21 @@ const Logo = styled.div`
 `;
 // ====================
 const EtcWrap = styled.div`
-  width: 200px;
+  width: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 const BagIcon = styled.div`
-  font-size: 40px;
+  font-size: 25px;
   color: ${MainStyle.color};
 `;
 const SearchIcon = styled.div`
-  font-size: 40px;
+  font-size: 25px;
   color: ${MainStyle.color};
 `;
 const LoginIcon = styled.div`
-  font-size: 40px;
+  font-size: 25px;
   color: ${MainStyle.color};
 `;
 // ===============
@@ -95,14 +94,15 @@ export const Header = () => {
                 <FontAwesomeIcon icon={faUser} />
               </Link>
             </LoginIcon>
+
+            <SearchIcon>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </SearchIcon>
             <BagIcon>
               <Link to="/shopping_bag">
                 <FontAwesomeIcon icon={faBagShopping} />
               </Link>
             </BagIcon>
-            <SearchIcon>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </SearchIcon>
           </EtcWrap>
         </Wrap>
         <MenuWrap>
