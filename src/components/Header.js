@@ -74,7 +74,7 @@ const Menus = styled.div`
 const Menu = styled.div``;
 
 export const Header = () => {
-  const [click, setClick] = useState();
+  // const [click, setClick] = useState();
   const [show, setShow] = useState("-400px");
   const handleClick = () => {
     setShow("0");

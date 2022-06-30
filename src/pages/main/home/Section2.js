@@ -1,5 +1,12 @@
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Container } from "../../../components/Container";
+import { Navigation, Pagination } from "swiper";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Link } from "react-router-dom";
 
 const Wrap = styled.div`
   height: 90vh;
@@ -10,7 +17,12 @@ const Wrap = styled.div`
 
 const TextWrap = styled.div`
   width: 500px;
-  background-color: lightgrey;
+  height: 480px;
+  background-color: gray;
+  position: absolute;
+  top: 195vh;
+  left: 110px;
+  z-index: 999;
 `;
 
 const Title = styled.div`
@@ -24,7 +36,7 @@ const Desc = styled.div`
 `;
 
 const Contents = styled.div`
-  width: 85%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +58,7 @@ const ConTitle = styled.div`
   text-align: center;
   font-size: 22px;
   font-weight: 900;
+  margin-top: 50px;
 `;
 
 export const Section2 = ({ lovedData }) => {
@@ -56,14 +69,26 @@ export const Section2 = ({ lovedData }) => {
           <Title>Most Loved</Title>
           <Desc>Snp의 인기 제품들을 만나보세요.</Desc>
         </TextWrap>
-        <Contents>
-          {lovedData.map((loved) => (
-            <ConWrap key={loved.id}>
-              <Con></Con>
-              <ConTitle>{loved.title}</ConTitle>
-            </ConWrap>
-          ))}
-        </Contents>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          navigation
+          pagination={{ clickable: true }}
+          spaceBetween={50}
+          slidesPerView={3}
+        >
+          <Contents>
+            {lovedData.map((loved) => (
+              <SwiperSlide key={loved.id}>
+                <Link to={"/item"}>
+                  <ConWrap>
+                    <Con></Con>
+                    <ConTitle>{loved.title}</ConTitle>
+                  </ConWrap>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </Contents>
+        </Swiper>
       </Wrap>
     </Container>
   );

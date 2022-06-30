@@ -1,16 +1,18 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const SSection = styled.div`
+const SSection = styled.div``;
+const Con = styled.div`
   height: 80vh;
   background-color: lightblue;
 `;
-const Con = styled.div``;
 const TextBox = styled.div`
   width: 800px;
   height: 80vh;
   background-color: white;
   position: absolute;
   right: 70px;
+  bottom: -80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,13 +37,18 @@ const ConDesc = styled.div`
   font-weight: 100;
   line-height: 18px;
 `;
-const ConBtn = styled.div``;
+const ConBtnWrap = styled.div``;
+const ConBtn = styled.div`
+  margin-top: 25px;
+`;
 
 export const Section = () => {
   return (
     <>
       <SSection>
-        <Con></Con>
+        <Link to={"/item"}>
+          <Con></Con>
+        </Link>
         <TextBox>
           <ConText>
             <ConSubTitle>Snp UV PERPECT AIR TONE UP SUN CREAM</ConSubTitle>
@@ -54,7 +61,11 @@ export const Section = () => {
               입소문 스테디셀러, 바르는 순간 자연스럽게 톤-업
               <br /> 피부 답답함 없이 보송하게 흡수됩니다.
             </ConDesc>
-            <ConBtn>더 보기</ConBtn>
+            <ConBtnWrap>
+              <Link to={"/item"}>
+                <ConBtn>더 보기</ConBtn>
+              </Link>
+            </ConBtnWrap>
           </ConText>
         </TextBox>
       </SSection>

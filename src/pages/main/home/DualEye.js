@@ -8,6 +8,7 @@ const Wrap = styled.div`
 const Img = styled.div`
   height: 100vh;
   width: 50vw;
+  background-color: lightgrey;
 `;
 
 const Con = styled.div`

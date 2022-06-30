@@ -10,6 +10,7 @@ import { GlobalStyled } from "./styles/globalStyled";
 import { ShopBag } from "./pages/main/ShopBag";
 import { Login } from "./pages/main/Login";
 import { Event } from "./pages/community/Event";
+import { ItemDetail } from "./pages/shop/ItemDetail";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
           <Route path="/shopping_bag" element={<ShopBag />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/shop" element={<ShopMain />}></Route>
+          <Route path="/item" element={<ItemDetail />}></Route>
+
           <Route path="/community_notice" element={<Notice />}></Route>
           <Route path="/community_event" element={<Event />}></Route>
           <Route path="/*" element={<NotFound />}></Route>
