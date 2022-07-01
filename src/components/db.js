@@ -59,3 +59,18 @@ export const insta_img = [
     img: "Instagram",
   },
 ];
+
+export const img_scroll = [
+  {
+    id: 0,
+    title: "item1",
+  },
+  {
+    id: 1,
+    title: "item2",
+  },
+  {
+    id: 2,
+    title: "item3",
+  },
+];

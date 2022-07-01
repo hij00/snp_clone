@@ -1,4 +1,4 @@
-import { insta_img, most_loved } from "../../../components/db";
+import { img_scroll, insta_img, most_loved } from "../../../components/db";
 import { DualEye } from "./DualEye";
 import { Insta } from "./Insta";
 import { MainBanner } from "./MainBanner";
@@ -12,7 +12,7 @@ export const Home = () => {
       <MainBanner />
       <Section />
       <Section2 lovedData={most_loved} />
-      <Scroll />
+      <Scroll scrollData={img_scroll} />
       <DualEye />
       <Insta instaData={insta_img} />
     </>

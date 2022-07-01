@@ -17,12 +17,8 @@ const Wrap = styled.div`
 
 const TextWrap = styled.div`
   width: 500px;
-  height: 480px;
-  background-color: gray;
-  position: absolute;
-  top: 195vh;
-  left: 110px;
-  z-index: 999;
+  background-color: lightgray;
+  margin-top: 200px;
 `;
 
 const Title = styled.div`
@@ -33,32 +29,27 @@ const Title = styled.div`
 const Desc = styled.div`
   font-size: 18px;
   font-weight: 700;
+  margin-top: 10px;
 `;
 
 const Contents = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  overflow: hidden;
+  /* width: 250px; */
 `;
 
 const ConWrap = styled.div`
-  width: 400px;
-  margin-right: 40px;
+  /* height: 300px; */
 `;
 
 const Con = styled.div`
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   background-color: gold;
 `;
 
-const ConTitle = styled.div`
-  text-align: center;
-  font-size: 22px;
-  font-weight: 900;
-  margin-top: 50px;
+const ConTitle = styled.div``;
+
+const SlideWrap = styled.div`
+  width: 70%;
 `;
 
 export const Section2 = ({ lovedData }) => {
@@ -69,26 +60,28 @@ export const Section2 = ({ lovedData }) => {
           <Title>Most Loved</Title>
           <Desc>Snp의 인기 제품들을 만나보세요.</Desc>
         </TextWrap>
-        <Swiper
-          modules={[Navigation, Pagination]}
-          navigation
-          pagination={{ clickable: true }}
-          spaceBetween={50}
-          slidesPerView={3}
-        >
-          <Contents>
-            {lovedData.map((loved) => (
-              <SwiperSlide key={loved.id}>
-                <Link to={"/item"}>
-                  <ConWrap>
-                    <Con></Con>
-                    <ConTitle>{loved.title}</ConTitle>
-                  </ConWrap>
-                </Link>
-              </SwiperSlide>
-            ))}
-          </Contents>
-        </Swiper>
+        <SlideWrap>
+          <Swiper
+            modules={[Navigation, Pagination]}
+            navigation
+            pagination={{ clickable: true }}
+            spaceBetween={50}
+            slidesPerView={3}
+          >
+            <Contents>
+              {lovedData.map((loved) => (
+                <SwiperSlide key={loved.id}>
+                  <Link to={"/item"}>
+                    <ConWrap>
+                      <Con></Con>
+                      <ConTitle>{loved.title}</ConTitle>
+                    </ConWrap>
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Contents>
+          </Swiper>
+        </SlideWrap>
       </Wrap>
     </Container>
   );

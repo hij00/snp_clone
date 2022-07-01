@@ -5,6 +5,7 @@ const SSection = styled.div``;
 const Con = styled.div`
   height: 80vh;
   background-color: lightblue;
+  border: 5px solid black;
 `;
 const TextBox = styled.div`
   width: 800px;

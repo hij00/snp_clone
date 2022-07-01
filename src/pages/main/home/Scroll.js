@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 const Wrap = styled.div`
   display: flex;
-  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 `;
 const Width = styled.div`
   height: 100vh;
@@ -28,14 +30,27 @@ const Img = styled.div`
   height: 400px;
   background-color: gold;
 `;
+
+const HeightW = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+`;
+
 const Height = styled.div`
   height: 100vh;
   width: 50vw;
   background-color: lightblue;
   border: 5px solid black;
 `;
+const HeightWrap = styled.div`
+  /* position: relative;
+  top: 0;
+  right: 0;
+  width: 50%; */
+`;
 
-export const Scroll = () => {
+export const Scroll = ({ scrollData }) => {
   return (
     <Wrap>
       <Width>
@@ -43,7 +58,13 @@ export const Scroll = () => {
         <Desc>하루 한장으로 순하고 깨끗하게</Desc>
         <Img></Img>
       </Width>
-      <Height></Height>
+      <HeightW>
+        {scrollData.map((img) => (
+          <HeightWrap key={img.id}>
+            <Height>{img.title}</Height>
+          </HeightWrap>
+        ))}
+      </HeightW>
     </Wrap>
   );
 };
