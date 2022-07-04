@@ -4,7 +4,7 @@ const Wrap = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 const Width = styled.div`
   height: 100vh;
@@ -33,6 +33,7 @@ const Img = styled.div`
 
 const HeightW = styled.div`
   width: 50%;
+  /* height: 300vh; */
   display: flex;
   flex-direction: column;
 `;
@@ -42,12 +43,15 @@ const Height = styled.div`
   width: 50vw;
   background-color: lightblue;
   border: 5px solid black;
+  position: sticky;
+  top: 0;
 `;
 const HeightWrap = styled.div`
   /* position: relative;
   top: 0;
   right: 0;
   width: 50%; */
+  height: 300vh;
 `;
 
 export const Scroll = ({ scrollData }) => {
